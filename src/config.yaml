@@ -1,0 +1,46 @@
+file_path: './data/mini_project_1_data.csv'
+target_column: shares
+val_test_size: 0.2
+val_size: 0.5
+ridge_param_grid:
+  regressor__alpha: [0.1, 1, 10, 100, 1000]
+  regressor__fit_intercept: [True, False]
+rf_param_grid:
+  regressor__max_depth: [8, 12, 16, None]
+  regressor__min_samples_leaf: [3, 5, 10, 20] 
+gb_param_grid:
+  regressor__learning_rate: [0.01, 0.03, 0.05, 0.1]
+  regressor__max_depth: [3, 5, 7, None]
+  regressor__max_iter: [200, 400, 600, 800]
+  regressor__min_samples_leaf: [20, 50, 100, 200]
+cv: 5
+scoring: r2
+numerical_features:
+  - timedelta
+  - n_tokens_title
+  - n_tokens_content
+  - n_unique_tokens
+  - n_non_stop_words
+  - n_non_stop_unique_tokens
+  - num_hrefs
+  - num_self_hrefs
+  - num_imgs
+  - num_videos
+  - n_comments
+  - average_token_length
+  - self_reference_min_shares
+  - self_reference_max_shares
+  - self_reference_avg_shares
+  - num_keywords
+  - kw_min_min
+  - kw_max_min
+  - kw_avg_min
+  - kw_min_max
+  - kw_max_max
+  - kw_avg_max
+  - kw_min_avg
+  - kw_max_avg
+  - kw_avg_avg
+nominal_features:
+  - data_channel
+  - weekday
