@@ -2,15 +2,16 @@ file_path: './data/mini_project_1_data.csv'
 target_column: shares
 val_test_size: 0.2
 val_size: 0.5
+seed: 42
 ridge_param_grid:
   regressor__alpha: [0.1, 1, 10, 100, 1000]
   regressor__fit_intercept: [True, False]
 rf_param_grid:
-  regressor__max_depth: [8, 12, 16, None]
+  regressor__max_depth: [8, 12, 16, null]
   regressor__min_samples_leaf: [3, 5, 10, 20] 
 gb_param_grid:
   regressor__learning_rate: [0.01, 0.03, 0.05, 0.1]
-  regressor__max_depth: [3, 5, 7, None]
+  regressor__max_depth: [3, 5, 7, null]
   regressor__max_iter: [200, 400, 600, 800]
   regressor__min_samples_leaf: [20, 50, 100, 200]
 cv: 5
@@ -43,4 +44,4 @@ numerical_features:
   - kw_avg_avg
 nominal_features:
   - data_channel
-  - weekday
+  - weekday
